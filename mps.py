@@ -44,14 +44,14 @@ if model == 'tt2tc':
     h = tt2tc(x, y, z, mu)
 
 if d == 2:
-    sx = np.array([[0, 1],[1, 0]]) # gets 1/2
-    sy = np.array([[0, -1j],[1j, 0]]) # gets 1/2
-    sz = np.array([[1, 0],[0, -1]]) # gets 1/2
+    sx = np.array([[0, 1],[1, 0]])
+    sy = np.array([[0, -1j],[1j, 0]]) 
+    sz = np.array([[1, 0],[0, -1]])
 
 if d == 3:
-    sx = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]]) # gets 1/sqrt2
-    sy = np.array([[0, -1j, 0], [1j, 0, -1j], [0, 1j, 0]]) # gets 1/sqrt2
-    sz = np.array([[1, 0, 0], [0, 0, 0], [0, 0, -1]])
+    sx = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
+    sy = np.array([[0, -1j, 0], [1j, 0, -1j], [0, 1j, 0]]) 
+    sz = np.array([[1, 0, 0], [0, 0, 0], [0, 0, -1]]) # no 1/2
 
 sp = 0.5 * (sx + 1.0j * sy)
 sm = 0.5 * (sx - 1.0j * sy)
@@ -81,6 +81,8 @@ freq_vec = np.linspace(freq_min, freq_max, num)
 
 dsf = calc_dsf(*gs_mps, *disp, mom_vec, freq_vec, gamma, n)
 specfxn = calc_specfxn(*gs_mps, *disp, mom_vec, freq_vec, gamma, sp, -sz)
+
+
 
 
 
